@@ -1,0 +1,10 @@
+<div class="container">
+  <h1><%= @list.name %></h1>
+  <%= link_to 'Add Movie', new_list_bookmark_path(@list) %>
+
+  <div class="container">
+    <% @list.movies.each do |m| %>
+    <p><%= m.title %> <%= link_to 'DELETE', delete_bookmark_path, method: :delete %></p>
+    <% end %>
+  </div>
+</div>
