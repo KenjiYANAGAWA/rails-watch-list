@@ -3,12 +3,11 @@
   <h2>My Movie Lists</h2>
   <div class="container">
     <% @lists.each do |list| %>
-      <div class="item card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : image_path('list_icon.jpg') %>)">
+      <div class="card-category mt-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : image_path('list_icon.jpg') %>)">
         <%= link_to list.name, list_path(list) %>
       </div>
     <% end %>
   </div>
-
   <div class="container">
     <%= link_to 'Create List', new_list_path, class: "btn btn-primary"%>
   </div>
