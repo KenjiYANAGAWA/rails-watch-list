@@ -3,11 +3,9 @@
   <h1><%= @list.name %></h1>
 
   <% if @list.photo.attached? %>
-    <%= cl_image_tag(@list.photo.key,
-    width: 400, height: 300, crop: :fill) %>
+    <%= cl_image_tag @list.photo.key, width: 400, height: 300, crop: :fill %>
   <% else %>
-    <%= image_tag('list_icon.jpg',
-    width: 150, height: 150, crop: :thumb) %>
+    <%= image_tag('list_icon.jpg', width: 150, height: 150, crop: :thumb) %>
   <% end %>
 
     <!-- for face detection -->
